@@ -1,0 +1,14 @@
+@import "scss/mixins";
+@import "scss/variables";
+
+@include exports("@union/global-legacy") {
+    *, *:before, *:after {
+        box-sizing: inherit;
+    }
+
+    html, body {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+}

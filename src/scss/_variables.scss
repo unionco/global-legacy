@@ -1,0 +1,111 @@
+$color-paragraph: #333 !default;
+$color-primary: #25c !default;
+$color-secondary: #333 !default;
+$color-success: #3c3 !default;
+$color-error: #c33 !default;
+
+$colors: (
+        paragraph: $color-paragraph,
+        primary: $color-primary,
+        secondary: $color-secondary,
+) !default;
+
+$default-border-radius: 3px !default;
+$default-transition-speed: 0.2s !default;
+
+$family-paragraph: sans-serif !default;
+$family-heading: sans-serif !default;
+
+$mq-site-min: 20em !default; // 320px
+$mq-xsmall: 30em !default; // 480px
+$mq-small: 40em !default; // 640px
+$mq-medium: 48em !default; // 768px
+$mq-large: 64em !default; // 1024px
+$mq-xlarge: 80em !default; // 1280px
+$mq-site-max: 90em !default; // 1440px
+$site-max-width: calc($mq-site-max / 1em * 16px) !default;
+
+$screen: "only screen";
+
+$mq-landscape: "#{$screen} and (orientation: landscape)";
+$mq-portrait: "#{$screen} and (orientation: portrait)";
+
+$mq-xsmall-up: "#{$screen} and (min-width: #{$mq-xsmall})";
+$mq-xsmall-down: "#{$screen} and (max-width: #{rev($mq-small)})";
+$mq-xsmall-only: $mq-xsmall-down;
+
+$mq-small-up: "#{$screen} and (min-width: #{$mq-small})";
+$mq-small-down: "#{$screen} and (max-width: #{rev($mq-medium)})";
+$mq-small-only: "#{$mq-small-up} and (max-width: #{rev($mq-medium)})";
+
+$mq-medium-up: "#{$screen} and (min-width: #{$mq-medium})";
+$mq-medium-down: "#{$screen} and (max-width: #{rev($mq-large)})";
+$mq-medium-only: "#{$mq-medium-up} and (max-width: #{rev($mq-large)})";
+
+$mq-large-up: "#{$screen} and (min-width: #{$mq-large})";
+$mq-large-down: "#{$screen} and (max-width: #{rev($mq-xlarge)})";
+$mq-large-only: "#{$mq-large-up} and (max-width: #{rev($mq-xlarge)})";
+
+$mq-xlarge-up: "#{$screen} and (min-width: #{$mq-xlarge})";
+$mq-xlarge-down: "#{$screen} and (max-width: #{rev($mq-site-max)})";
+$mq-xlarge-only: "#{$mq-xlarge-up} and (max-width: #{rev($mq-site-max)})";
+
+$mq-site-max-up: "#{$screen} and (min-width: #{$mq-site-max})";
+$mq-site-max-down: "#{$screen}";
+$mq-site-max-only: "#{$mq-site-max-up}";
+
+$font-size-12: #{"slope-calc(12px #{$mq-site-max}, 10.65px #{$mq-site-min}, clip)"};
+$font-size-13: #{"slope-calc(13px #{$mq-site-max}, 11.55px #{$mq-site-min}, clip)"};
+$font-size-14: #{"slope-calc(14px #{$mq-site-max}, 12.44px #{$mq-site-min}, clip)"};
+$font-size-16: #{"slope-calc(16px #{$mq-site-max}, 13.33px #{$mq-site-min}, clip)"};
+$font-size-18: #{"slope-calc(18px #{$mq-site-max}, 14.22px #{$mq-site-min}, clip)"};
+$font-size-20: #{"slope-calc(20px #{$mq-site-max}, 15.11px #{$mq-site-min}, clip)"};
+$font-size-22: #{"slope-calc(22px #{$mq-site-max}, 16px #{$mq-site-min}, clip)"};
+$font-size-24: #{"slope-calc(24px #{$mq-site-max}, 16.89px #{$mq-site-min}, clip)"};
+$font-size-26: #{"slope-calc(26px #{$mq-site-max}, 17.78px #{$mq-site-min}, clip)"};
+$font-size-28: #{"slope-calc(28px #{$mq-site-max}, 18.66px #{$mq-site-min}, clip)"};
+$font-size-30: #{"slope-calc(30px #{$mq-site-max}, 19.55px #{$mq-site-min}, clip)"};
+$font-size-32: #{"slope-calc(32px #{$mq-site-max}, 20.44px #{$mq-site-min}, clip)"};
+$font-size-36: #{"slope-calc(36px #{$mq-site-max}, 21.33px #{$mq-site-min}, clip)"};
+$font-size-40: #{"slope-calc(40px #{$mq-site-max}, 22.22px #{$mq-site-min}, clip)"};
+$font-size-44: #{"slope-calc(44px #{$mq-site-max}, 23px #{$mq-site-min}, clip)"};
+$font-size-48: #{"slope-calc(48px #{$mq-site-max}, 24px #{$mq-site-min}, clip)"};
+$font-size-50: #{"slope-calc(50px #{$mq-site-max}, 24.65px #{$mq-site-min}, clip)"};
+$font-size-56: #{"slope-calc(56px #{$mq-site-max}, 25.78px #{$mq-site-min}, clip)"};
+$font-size-60: #{"slope-calc(60px #{$mq-site-max}, 26.66px #{$mq-site-min}, clip)"};
+$font-size-70: #{"slope-calc(70px #{$mq-site-max}, 27.55px #{$mq-site-min}, clip)"};
+$font-size-84: #{"slope-calc(84px #{$mq-site-max}, 28.44px #{$mq-site-min}, clip)"};
+$font-size-90: #{"slope-calc(90px #{$mq-site-max}, 29px #{$mq-site-min}, clip)"};
+$font-size-120: #{"slope-calc(120px #{$mq-site-max}, 29.77px #{$mq-site-min}, clip)"};
+$font-size-140: #{"slope-calc(140px #{$mq-site-max}, 30.22px #{$mq-site-min}, clip)"};
+
+$spacing-20: #{"slope-calc(20px #{$mq-site-max}, 12px #{$mq-site-min}, clip)"};
+$spacing-30: #{"slope-calc(30px #{$mq-site-max}, 14px #{$mq-site-min}, clip)"};
+$spacing-40: #{"slope-calc(40px #{$mq-site-max}, 16px #{$mq-site-min}, clip)"};
+$spacing-50: #{"slope-calc(50px #{$mq-site-max}, 18px #{$mq-site-min}, clip)"};
+$spacing-60: #{"slope-calc(60px #{$mq-site-max}, 20px #{$mq-site-min}, clip)"};
+$spacing-80: #{"slope-calc(80px #{$mq-site-max}, 24px #{$mq-site-min}, clip)"};
+$spacing-100: #{"slope-calc(100px #{$mq-site-max}, 28px #{$mq-site-min}, clip)"};
+$spacing-120: #{"slope-calc(120px #{$mq-site-max}, 32px #{$mq-site-min}, clip)"};
+$spacing-140: #{"slope-calc(140px #{$mq-site-max}, 36px #{$mq-site-min}, clip)"};
+$spacing-160: #{"slope-calc(160px #{$mq-site-max}, 40px #{$mq-site-min}, clip)"};
+
+$spacing-negative-20: #{"slope-calc(-20px #{$mq-site-max}, -12px #{$mq-site-min}, clip)"};
+$spacing-negative-30: #{"slope-calc(-30px #{$mq-site-max}, -14px #{$mq-site-min}, clip)"};
+$spacing-negative-40: #{"slope-calc(-40px #{$mq-site-max}, -16px #{$mq-site-min}, clip)"};
+$spacing-negative-50: #{"slope-calc(-50px #{$mq-site-max}, -18px #{$mq-site-min}, clip)"};
+$spacing-negative-60: #{"slope-calc(-60px #{$mq-site-max}, -20px #{$mq-site-min}, clip)"};
+$spacing-negative-80: #{"slope-calc(-80px #{$mq-site-max}, -24px #{$mq-site-min}, clip)"};
+$spacing-negative-100: #{"slope-calc(-100px #{$mq-site-max}, -28px #{$mq-site-min}, clip)"};
+$spacing-negative-120: #{"slope-calc(-120px #{$mq-site-max}, -32px #{$mq-site-min}, clip)"};
+$spacing-negative-140: #{"slope-calc(-140px #{$mq-site-max}, -36px #{$mq-site-min}, clip)"};
+$spacing-negative-160: #{"slope-calc(-160px #{$mq-site-max}, -40px #{$mq-site-min}, clip)"};
+
+$spacing-levels: $spacing-20 $spacing-40 $spacing-60 $spacing-80 $spacing-100 $spacing-120 $spacing-140 $spacing-160;
+
+$base-font-color: #333 !default;
+$base-font-weight: normal !default;
+$base-font-size: $font-size-18 !default;
+$base-font-height: 1.6 !default;
+$base-font-family: $family-paragraph !default;
+$base-font: $base-font-weight #{18px}/$base-font-height $base-font-family !default;

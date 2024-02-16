@@ -1,0 +1,77 @@
+// subtracts 1 pixel from an (r)em value
+@function rev($unit) {
+    @return $unit - calc(1/16);
+}
+
+@function strip-unit($number) {
+    @if type-of($number) == 'number' and not unitless($number) {
+        @return $number / ($number * 0 + 1);
+    }
+    @return $number;
+}
+
+@function em-to-px($number, $base:16) {
+    @return calc(strip-unit($number)*$base) + 0px;
+}
+
+@function px-to-em($number, $base:16) {
+    @return calc(strip-unit($number)/$base) + 0em;
+}
+
+@function mq-to-js($number) {
+    @return strip-unit(em-to-px($number));
+}
+
+// a fix for floats
+@mixin clearfix {
+    &::after {
+        clear: both;
+        content: '';
+        display: table;
+    }
+}
+
+// makes the content invisible while still ensuring
+// the contents are seen by a screen reader
+@mixin element-invisible {
+    bottom: 0;
+    clip: rect(1px, 1px, 1px, 1px);
+    height: 1px;
+    overflow: hidden;
+    pointer-events: none;
+    position: absolute !important;
+    width: 1px;
+}
+
+// prevents styles from being loaded multiple times
+// for components that rely on other components.
+$modules: () !default;
+
+@mixin exports($name) {
+    $module_index: index($modules, $name);
+    @if (($module_index == null) or ($module_index == false)) {
+        $modules: append($modules, $name) !global;
+        @content;
+    }
+}
+
+// make it a habit to include focus states when
+// defining hover states
+@mixin hover($selectors: '') {
+    &:hover,
+    &:focus,
+    #{$selectors} {
+        outline: none;
+        @content;
+    }
+}
+
+// polyfill for input placeholder styling
+@mixin placeholder {
+    $placeholders: ":-webkit-input" ":-moz" "-moz" "-ms-input";
+    @each $placeholder in $placeholders {
+        &:#{$placeholder}-placeholder {
+            @content;
+        }
+    }
+}
